@@ -1,5 +1,5 @@
-// Example code for Chapter 2.2 from "Build Web Application with Golang"
-// Purpose: Goes over the assignment and manipulation of basic data types.
+// Código de exemplo para o Capítulo 2.2 para "Build Web Application with Golang"
+// Propósito: Compreender a atribuição e manipulação de tipos de dados básicos.
 package main
 
 import (
@@ -7,14 +7,14 @@ import (
 	"fmt"
 )
 
-// constants
+// constantes
 const Pi = 3.1415926
 
-// booleans default to `false`
-var isActive bool                   // global variable
-var enabled, disabled = true, false // omit type of variables
+// booleanos por padrão são `false`
+var isActive bool                   // variável global
+var enabled, disabled = true, false // omitindo os tipos de variáveis
 
-// grouped definitions
+// definições agrupadas
 const (
 	i         = 1e4
 	MaxThread = 10
@@ -22,39 +22,41 @@ const (
 )
 
 var (
-	frenchHello string      // basic form to define string
-	emptyString string = "" // define a string with empty string
+	frenchHello string      // forma básica de definir string
+	emptyString string = "" // define uma string e atribui vazio
 )
 
 func show_multiple_assignments() {
 	fmt.Println("show_multiple_assignments()")
 	var v1 int = 42
 
-	// Define three variables with type "int", and initialize their values.
-	// vname1 is v1, vname2 is v2, vname3 is v3
+	// Define três variáveis como "int", e inicializa seus valores.
+	// vname1 é v1, vname2 é v2, vname3 é v3
 	var v2, v3 int = 2, 3
 
-	// `:=` only works in functions
-	// `:=` is the short way of declaring variables without
-	//  specifying the type and using the keyboard `var`.
+	// `:=` só funciona em funções
+	// `:=` a maneira curta de definir variáveis sem
+	//  especificar o tipo usando a palavra-chave `var`.
 	vname1, vname2, vname3 := v1, v2, v3
 
-	// `_` disregards the returned value.
+	// `_` ignora o valor atribuído.
 	_, b := 34, 35
 
 	fmt.Printf("vname1 = %v, vname2 = %v, vname3 = %v\n", vname1, vname2, vname3)
 	fmt.Printf("v1 = %v, v2 = %v, v3 = %v\n", v1, v2, v3)
 	fmt.Println("b =", b)
 }
+
 func show_bool() {
 	fmt.Println("show_bool()")
-	var available bool // local variable
-	valid := false     // Shorthand assignment
-	available = true   // assign value to variable
+	var available bool // variável local
+	valid := false     // atribuição curta
+	available = true   // atribuindo valor a variável
 
 	fmt.Printf("valid = %v, !valid = %v\n", valid, !valid)
 	fmt.Printf("available = %v\n", available)
 }
+
 func show_different_types() {
 	fmt.Println("show_different_types()")
 	var (
@@ -78,40 +80,42 @@ func show_different_types() {
 }
 func show_strings() {
 	fmt.Println("show_strings()")
-	no, yes, maybe := "no", "yes", "maybe" // brief statement
+	no, yes, maybe := "no", "yes", "maybe" // inicialização rápida
 	japaneseHello := "Ohaiyou"
-	frenchHello = "Bonjour" // basic form of assign values
+	frenchHello = "Bonjour" // forma básica de atribuição
 
 	fmt.Println("Random strings")
 	fmt.Println(frenchHello, japaneseHello, no, yes, maybe)
 
-	// The backtick, `, will not escape any character in a string
-	fmt.Println(`This 
+	// O acento grave, `, não irá escapar nenhum caracter na string
+	fmt.Println(`This
 	is on
 	multiple lines`)
 }
+
 func show_string_manipulation() {
 	fmt.Println("show_string_manipulation()")
 	var s string = "hello"
 
-	//You can't do this with strings
+	//Não é possível fazer isso com strings
 	//s[0] = 'c'
 
 	s = "hello"
-	c := []byte(s) // convert string to []byte type
+	c := []byte(s) // converte string para o tipo []byte
 	c[0] = 'c'
-	s2 := string(c) // convert back to string type
+	s2 := string(c) // converte de volta para string
 
 	m := " world"
 	a := s + m
 
-	d := "c" + s[1:] // you cannot change string values by index, but you can get values instead.
+	d := "c" + s[1:] // não é possível alterar o valor da string elo índice, mas é possível, mas é possui obter os valores.
 	fmt.Printf("%s\n", d)
 
 	fmt.Printf("s = %s, c = %v\n", s, c)
 	fmt.Printf("s2 = %s\n", s2)
 	fmt.Printf("combined strings\na = %s, d = %s\n", a, d)
 }
+
 func show_errors() {
 	fmt.Println("show_errors()")
 	err := errors.New("Example error message\n")
@@ -119,6 +123,7 @@ func show_errors() {
 		fmt.Print(err)
 	}
 }
+
 func show_iota() {
 	fmt.Println("show_iota()")
 	const (
