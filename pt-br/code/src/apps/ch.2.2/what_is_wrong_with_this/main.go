@@ -1,6 +1,6 @@
-// Example code for Chapter 2.2 from "Build Web Application with Golang"
-// Purpose: Try to fix this program.
-// From the console, type `go run main.go`
+// Código de exemplo para o capítulo 2.2 de "Build Web Application with Golang"
+// Propósito: Tente consertar esse programa.
+// No console,  `go run main.go`
 package main
 
 func main() {
